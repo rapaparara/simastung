@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="rap.ung.simastung">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        tools:replace="android:allowBackup"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Simastung">
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="rap.ung.simastung"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/fileprovider" />
+        </provider>
+
+        <activity
+            android:name=".Activity.MapsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.TambahKondisiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.KondisiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.DetailActivity"
+            android:exported="false"
+            android:parentActivityName=".Activity.MainActivity" />
+        <activity
+            android:name=".Activity.Navdrawer"
+            android:exported="false"
+            android:label="@string/title_activity_navdrawer"
+            android:theme="@style/Theme.Simastung.NoActionBar" />
+        <activity
+            android:name=".Activity.UbahActivity"
+            android:exported="false"
+            android:parentActivityName=".Activity.MainActivity" />
+        <activity
+            android:name=".Activity.MasukActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activity.TambahActivity"
+            android:exported="false"
+            android:parentActivityName=".Activity.MainActivity" />
+        <activity
+            android:name=".Activity.MainActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>
